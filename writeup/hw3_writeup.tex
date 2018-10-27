@@ -106,35 +106,35 @@
 	\newpage
 		\item  Plots:
 		\begin{itemize}
-			\item N=1
+			\item N=1 :  First reached a mean reward of 225 after 20500 episodes.
 			\begin{figure}[H]
 				\begin{center} 
 					\includegraphics[scale=.73]{figures/A2C_LC_N=1_21.png}
 				\end{center}
 				\caption{A2C Algorithm N=1: learning curve - Every k=500 episodes the current policy is tested on 100 episodes. The plot shows the mean and standard deviation of each of this tests.  } 	\label{2}%
 			\end{figure}			
-			\item  N=20
+			\item  N=20 :   First reached a mean reward of 200 after 6500 episodes.
 			\begin{figure}[H]
 				\begin{center} 
 					\includegraphics[scale=.73]{figures/A2C_LC_N=20_50.png}
 				\end{center}
 				\caption{A2C Algorithm N=20: learning curve - Every k=500 episodes the current policy is tested on 100 episodes. The plot shows the mean and standard deviation of each of this tests.  } 	\label{3}%
 			\end{figure}
-			\item N=50
+			\item N=50:   First reached a mean reward of 201 after 20500 episodes.
 			\begin{figure}[H]
 				\begin{center} 
 					\includegraphics[scale=.73]{figures/A2C_LC_N=50_45.png}
 				\end{center}
 				\caption{A2C Algorithm N=50: learning curve - Every k=500 episodes the current policy is tested on 100 episodes. The plot shows the mean and standard deviation of each of this tests.  } 	\label{4}%
 			\end{figure}
-			\item N=100 actor lr=0.0008
+			\item N=100 actor lr=0.0008 and critic lr=0.001 :  First reached a mean reward of 200 after 25500 episodes.
 			\begin{figure}[H]
 				\begin{center} 
 					\includegraphics[scale=.73]{figures/A2C_LC_N=100_50.png}
 				\end{center}
 				\caption{A2C Algorithm N=100: learning curve - Every k=500 episodes the current policy is tested on 100 episodes. The plot shows the mean and standard deviation of each of this tests.  } 	\label{5}%
 			\end{figure}	
-					\item N=100 actor lr=0.001
+					\item N=100 actor lr=0.001 and critic lr=0.001 : First reached a mean reward of 204 after 32000 episodes.
 			\begin{figure}[H]
 				\begin{center} 
 					\includegraphics[scale=.73]{figures/A2C_LC_N=100_35.png}
@@ -151,7 +151,7 @@
 		A2C n=50 (50-steps return) comes second with 20500 episodes.  
 		Third comes A2C n=100 with 32000 episodes. 
 		Fourth comes Reinforce with 36000 episodes. 
-		A2C n=1 was not able to achieve 200 with the same neural architecture as the other algorithms. However using a NN architecture that include 3 layers each with 30 units this time A2C n=1 achieved a reward of 225 after 20500 episodes similar to A2C n=50.
+		A2C n=1 was not able to achieve 200 with the same neural architecture for the critic as the other algorithms. However using a critic NN architecture that include 3 layers each with 30 units this time A2C n=1 achieved a reward of 225 after 20500 episodes similar to A2C n=50.
 		Comparing figures \ref{3}, \ref{4} and \ref{6},
 		it can be seen that A2C n=20 has the steepest rate of learning then comes n=50 and finally n=100. 
 		We believe this is the case since 20-step and 50-step A2Cs have the best balance between bootstrapping using the value function and using the full MC return.
