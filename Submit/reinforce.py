@@ -39,7 +39,7 @@ class Reinforce(object):
         log_prob_actions = K.log(prob_actions)
         loss = - log_prob_actions * G_return
         loss = K.mean(loss)
-        Adam = keras.optimizers.Adam()#lr=self.lr)
+        Adam = keras.optimizers.Adam(lr=self.lr)
         updates = Adam.get_updates(self.model.trainable_weights,[],loss)
         self.fit = K.function(inputs=[states,onehot_action,G_return],
                               outputs=[],
